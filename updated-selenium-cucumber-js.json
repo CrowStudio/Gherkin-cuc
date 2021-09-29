@@ -1,4 +1,4 @@
 {
-    "browser": "chrome",
-    "timeout": 45000
+  "browser": "chrome",
+  "timeout": 45000
 }
