@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CrowStudio/Gherkin-cuc/issues"
   },
-  "homepage": "https://github.com/CrowStudio/Gherkin-cuc#readme"
+  "homepage": "https://github.com/CrowStudio/Gherkin-cuc#readme",
+  "dependencies": {
+    "updated-selenium-cucumber-js": "^1.8.3-rc3"
+  }
 }
