@@ -11,6 +11,8 @@ Feature: Willys product information
     And I click the accept cookies button
     Then I should be able to see some products
 
+  #decide what product to click or click a random one?
+
   Scenario: Click product and get information
     #Given that I am on "https://www.willys.se"
     When I click on a product
