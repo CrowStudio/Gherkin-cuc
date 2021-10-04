@@ -8,7 +8,8 @@ Feature: Willys product information
 
   Background: Click cookies button
     Given that I am on "https://www.willys.se"
-    And I click the accept cookies button
+      And I click the accept cookies button
+      And we have been through the initial select delivery popup
     Then I should be able to see some products
 
   #decide what product to click or click a random one?
