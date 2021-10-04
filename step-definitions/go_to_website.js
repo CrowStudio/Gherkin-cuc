@@ -13,4 +13,9 @@ module.exports = function() {
     
     await cookiesButtonSelect.click();
   });
+
+  this.Then(/^I should be able to see some products$/, async function(){
+    let productArray = await driver.findElements(By.css(".ax-product-puff-head"));
+    expect(productArray.length).to.not.equal(0);
+  });
 }

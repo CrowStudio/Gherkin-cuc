@@ -6,9 +6,10 @@ Feature: Willys product information
   information about it.
 
 
-  #Background? Maybe search for a product?
-  #choose products to search for and then click and get info?
-  #or just a random product from the the start page?
+  Background: Click cookies button
+    Given that I am on "https://www.willys.se"
+    And I click the accept cookies button
+    Then I should be able to see some products
 
   Scenario: Click product and get information
     Given that I am on "https://www.willys.se"

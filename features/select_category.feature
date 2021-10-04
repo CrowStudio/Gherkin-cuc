@@ -5,8 +5,9 @@ Feature: Select a Product Category on willys.se
   to make it easier to find a specifik product at willys.se
 
   Background: Going to Willys and pressing the accept cookies button
-      Given that I am on "https://www.willys.se"
-      When I click the accept cookies button
+    Given that I am on "https://www.willys.se"
+    And I click the accept cookies button
+    Then I should be able to see some products
 
   Scenario Outline: Show Products per Catagory
     When I can click Meny
