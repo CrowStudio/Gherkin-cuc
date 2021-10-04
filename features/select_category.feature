@@ -1,0 +1,22 @@
+#As a customer, I want to be able to select a category of products, so that I can see what products are included.
+
+Feature: Select a Product Category on willys.se
+  You should be able single out a product catergory,
+  to make it easier to find a specifik product at willys.se
+
+  Background: Going to Willys and pressing the accept cookies button
+      Given that I am on "https://www.willys.se"
+      When I click the accept cookies button
+
+  Scenario Outline: Show Products per Catagory
+    When I can click Meny
+      And click <Sort>
+      And click <SubSort>
+    Then I should get a listing of products
+      And the search result should contain only products related to SubSort
+
+  Examples:
+  | Sort            | SubSort      |
+  | "Frukt & Grönt" | "Färska bär" |
+  | "Vegetariskt"   | "Korv"       |
+
