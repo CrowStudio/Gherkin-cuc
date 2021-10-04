@@ -1,0 +1,60 @@
+[
+  {
+    "elements": [
+      {
+        "id": "click-accept-cookie-button;going-to-willys-and-pressing-the-accept-cookies-button",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Going to Willys and pressing the accept cookies button",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I am on \"https://www.willys.se\"",
+            "result": {
+              "status": "passed",
+              "duration": 1693004000
+            },
+            "line": 4,
+            "match": {
+              "location": "C:\\Users\\majki\\OneDrive\\Programming\\public_repos\\Gherkin-cuc\\step-definitions\\go_to_website.js:2"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click the accept cookies button",
+            "result": {
+              "status": "passed",
+              "duration": 1294166500
+            },
+            "line": 5,
+            "match": {
+              "location": "C:\\Users\\majki\\OneDrive\\Programming\\public_repos\\Gherkin-cuc\\step-definitions\\go_to_website.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 279850200
+            },
+            "hidden": true,
+            "match": {
+              "location": "C:\\Users\\majki\\OneDrive\\Programming\\public_repos\\Gherkin-cuc\\node_modules\\updated-selenium-cucumber-js\\runtime\\world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "click-accept-cookie-button",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Click accept cookie button",
+    "tags": [],
+    "uri": "C:/Users/majki/OneDrive/Programming/public_repos/Gherkin-cuc/features/go_to_website.feature"
+  }
+]
