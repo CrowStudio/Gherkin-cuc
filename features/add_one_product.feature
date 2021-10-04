@@ -10,4 +10,12 @@ Feature: Add one product to the shopping cart
     And we have been through the initial select delivery popup
     Then I should be able to see some products
 
-  Scenario:
+  Scenario: Add a product by clicking plus one time
+    When I click the plus sign for a product
+    And click the shopping cart
+    Then I should see a quantity of 1 of the product in the shopping cart
+
+  Scenario: Add a product by changing quantity to 1
+    When I change the quantity of a product from 0 to 1
+    And click the shopping cart
+    Then I should see a quantity of 1 of the product in the shopping cart
