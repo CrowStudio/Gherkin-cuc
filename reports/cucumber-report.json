@@ -13,7 +13,7 @@
             "name": "that I am on \"https://www.willys.se\"",
             "result": {
               "status": "passed",
-              "duration": 1661200100
+              "duration": 1548813300
             },
             "line": 4,
             "match": {
@@ -26,7 +26,7 @@
             "name": "I click the accept cookies button",
             "result": {
               "status": "passed",
-              "duration": 1159928000
+              "duration": 1248244300
             },
             "line": 5,
             "match": {
@@ -38,7 +38,7 @@
             "keyword": "After ",
             "result": {
               "status": "passed",
-              "duration": 115592100
+              "duration": 249759100
             },
             "hidden": true,
             "match": {

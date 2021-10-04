@@ -1,4 +1,4 @@
 {
-  "browser": "chromeHeadless",
+  "browser": "chrome",
   "timeout": 45000
 }
