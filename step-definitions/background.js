@@ -24,7 +24,6 @@ module.exports = function() {
 
   this.Given(/^we have been through the initial select delivery popup$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
-    let body = await driver.findElement(By.css('body'));
 
     await plusButton.click();
 
