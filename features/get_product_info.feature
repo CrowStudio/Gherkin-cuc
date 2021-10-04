@@ -10,7 +10,7 @@ Feature: Willys product information
   #choose products to search for and then click and get info?
   #or just a random product from the the start page?
 
-  Scenario Outline: Click product and get information
+  Scenario: Click product and get information
     Given that I am on "https://www.willys.se"
     When I click on a product
     Then I should get the clicked products information
