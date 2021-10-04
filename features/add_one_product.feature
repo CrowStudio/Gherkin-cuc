@@ -13,9 +13,9 @@ Feature: Add one product to the shopping cart
   Scenario: Add a product by clicking plus one time
     When I click the plus sign for a product
     And click the shopping cart
-    Then I should see a quantity of 1 of the product in the shopping cart
+    Then I should see a quantity of one of the product in the shopping cart
 
-  Scenario: Add a product by changing quantity to 1
-    When I change the quantity of a product from 0 to 1
+  Scenario: Add a product by changing quantity to one
+    When I change the quantity of a product from zero to one
     And click the shopping cart
-    Then I should see a quantity of 1 of the product in the shopping cart
+    Then I should see a quantity of one of the product in the shopping cart
