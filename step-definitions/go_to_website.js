@@ -3,7 +3,7 @@ module.exports = function() {
     await helpers.loadPage(url);
   });
 
-  this.When(/^I click the accept cookies button$/, async function(){
+  this.Given(/^I click the accept cookies button$/, async function(){
     await driver.wait(until.elementLocated(by.css('div.banner-actions-container')), 20000);
     let cookiesButtonSelect = await driver.findElement(By.css('#onetrust-accept-btn-handler'));
    
