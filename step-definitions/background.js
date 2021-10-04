@@ -10,7 +10,7 @@ module.exports = function() {
   });
 
   this.Given(/^I click the accept cookies button$/, async function(){
-    await driver.wait(until.elementLocated(by.css('div.banner-actions-container')), 20000);
+    await driver.wait(until.elementLocated(By.css('div.banner-actions-container')), 10000);
     let cookiesButtonSelect = await driver.findElement(By.css('#onetrust-accept-btn-handler'));
    
     while(!(await cookiesButtonSelect.isDisplayed())) {
@@ -24,13 +24,11 @@ module.exports = function() {
 
   this.Given(/^we have been through the initial select delivery popup$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
-
     await plusButton.click();
 
     await waitAWhile();
 
-    await driver.wait(until.elementsLocated(by.css('.ax-delivery-widget-overlay')), 10000);
-
+    await driver.wait(until.elementsLocated(By.css('.ax-delivery-widget-overlay')), 10000);
     let deliveryOverlay = await driver.findElement(By.css('.ax-delivery-widget-overlay'));
     await deliveryOverlay.click();
 
