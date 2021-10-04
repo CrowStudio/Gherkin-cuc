@@ -12,6 +12,5 @@ Feature: Willys product information
     Then I should be able to see some products
 
   Scenario: Click product and get information
-    Given that I am on "https://www.willys.se"
     When I click on a product
     Then I should get the clicked products information
