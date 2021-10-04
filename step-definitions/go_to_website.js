@@ -7,7 +7,7 @@ module.exports = function() {
     // Saving this code for later.
     //await driver.wait(until.elementLocated(by.css('div.banner-actions-container')), 20000);
     driver.manage().timeouts().implicitlyWait(20000);
-    let cookiesButtonSelect = await driver.findElement(by.id('onetrust-accept-btn-handler'));
+    let cookiesButtonSelect = await driver.findElement(By.css('#onetrust-accept-btn-handler'));
     await cookiesButtonSelect.click();
   });
 }
