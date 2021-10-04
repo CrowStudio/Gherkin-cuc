@@ -1,4 +1,5 @@
-#As a customer, I want to be able to select a category of products, so that I can see what products are included.
+# As a customer, I want to be able to select a category of products,
+# so that I can see what products are included.
 
 Feature: Select a Product Category on willys.se
   You should be able single out a product catergory,
