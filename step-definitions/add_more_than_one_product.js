@@ -19,10 +19,10 @@ module.exports = function () {
 
     // expect(quantity).to.equal(2);
   });
-  /*this.Then(/^I can verify that its more than one$/, async function () {
+  this.Then(/^I can verify that its more than one$/, async function () {
     await waitAWhile(true);
     let total = await driver.findElement(By.css('.ax-product-quantity-number'));
-    expect(total).to.equal(2);
-  });*/
+    expect(total).to.be.at.least(2);
+  });
 
 }
