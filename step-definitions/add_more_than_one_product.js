@@ -1,27 +1,28 @@
 const { waitAWhile } = require('../helpers/wait.js');
 module.exports = function () {
 
-  this.When(/^I click the plus sign for a product$/, async function () {
+  this.When(/^I click the plus sign to add a product$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
     await plusButton.click();
 
   });
 
-  this.When(/^I change the quantity of a product from zero to one$/, async function () {
-
+  this.When(/^click the plus sign of the same product again$/, async function () {
+    let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
+    await plusButton.click();
   });
 
-  this.When(/^click the shopping cart$/, async function () {
-    let shoppingCartButton = await driver.findElement(By.css('.mini-cart-desktop'));
-    await shoppingCartButton.click();
+  this.Then(/^the products is added to my shopping cart$/, async function () {
+    await waitAWhile(true);
+    let quantity = await driver.findElement(By.css('.mini-cart-desktop'));
+    await quantity.click();
 
+    // expect(quantity).to.equal(2);
   });
-
-  this.Then(/^I should see a quantity of one of the product in the shopping cart$/, async function () {
-
-    let quantity = await driver.findElement(By.css('.ax-product-quantity-number'));
-    // expect(quantity).to.equal('1'); - not working, probably for some very obviouse reason but me tired...
-
-  });
+  /*this.Then(/^I can verify that its more than one$/, async function () {
+    await waitAWhile(true);
+    let total = await driver.findElement(By.css('.ax-product-quantity-number'));
+    expect(total).to.equal(2);
+  });*/
 
 }

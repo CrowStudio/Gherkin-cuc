@@ -7,7 +7,8 @@
     "test": "node ./node_modules/updated-selenium-cucumber-js/index.js",
     "cat": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/select_category.feature",
     "add_one": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/add_one_product.feature",
-    "getInfo": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/get_product_info.feature"
+    "getInfo": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/get_product_info.feature",
+    "add_multi": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/add_more_than_one_product.feature"
   },
   "repository": {
     "type": "git",
