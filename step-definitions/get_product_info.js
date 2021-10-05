@@ -9,7 +9,6 @@ module.exports = function () {
   this.Then(/^I should get the clicked products information$/, async function () {
     await waitAWhile(true);
     let productInfo = await driver.findElement(By.css('.info-block.description'));
-    //await productInfo;
     expect(productInfo).to.not.equal(null);
 
 
