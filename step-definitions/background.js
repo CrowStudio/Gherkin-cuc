@@ -1,8 +1,4 @@
-let slowDown = true;
-
-async function waitAWhile() {
-  await driver.sleep(slowDown ? 5000 : 0);
-}
+const { waitAWhile } = require('../helpers/wait.js');
 
 module.exports = function() {
   this.Given(/^that I am on "([^"]*)"$/, async function(url){
@@ -19,14 +15,14 @@ module.exports = function() {
     
     await cookiesButtonSelect.click();
 
-    waitAWhile();
+    await waitAWhile(true);
   });
 
   this.Given(/^we have been through the initial select delivery popup$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
     await plusButton.click();
 
-    await waitAWhile();
+    await waitAWhile(true);
 
     await driver.wait(until.elementsLocated(By.css('.ax-delivery-widget-overlay')), 10000);
     let deliveryOverlay = await driver.findElement(By.css('.ax-delivery-widget-overlay'));
@@ -35,7 +31,7 @@ module.exports = function() {
     let minusButton = await driver.findElement(By.css('.ax-product-quantity-minus'));
     await minusButton.click();
 
-    await waitAWhile();
+    await waitAWhile(true);
   });
 
   // This function is unnecessary for final product, but should be included somewhere to have a verification method.
