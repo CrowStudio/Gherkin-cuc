@@ -12,8 +12,9 @@ Feature: Select a Product Category on willys.se
     Then I should be able to see some products
 
   Scenario Outline: Show Products per Catagory
-    When I click Meny
-      And click <Sort>
+    Given there is no side-menu open
+      And I click Meny
+    When I click <Sort>
       And click <SubSort>
     Then I should get a listing of products
       And the search result should contain only products related to SubSort
@@ -21,5 +22,5 @@ Feature: Select a Product Category on willys.se
   Examples:
   | Sort            | SubSort      |
   | "Frukt & Grönt" | "Färska bär" |
-  | "Vegetariskt"   | "Korv"       |
+#  | "Vegetariskt"   | "Korv"       |
 

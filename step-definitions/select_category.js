@@ -1,7 +1,20 @@
+const { waitAWhile } = require('../helpers/wait.js');
+
 module.exports = function () {
-  this.When(/^I click Meny$/, async function () {
-    /*     let menuButton = await driver.findElement(by.css('.MenuButtonstyles__StyledMenuButton-sc-hxepwf-0'));
-    
-        await menuButton.click(); */
+  let sideNav
+  this.Given(/^there is no side-menu open$/, async function () {
+    sideNav = await driver.findElements(By.css('.left-menu-btn-closed'));
   });
+
+  this.When(/^I click Meny$/, async function () {
+    if (sideNav.length === 1) {
+      let menuButton = await driver.findElement(By.css('button.ax-toolbar-btn'));
+      await menuButton.click();
+      await waitAWhile(true);
+    }
+  });
+
+  /*   this.When(/^I click "([^"]*)"$/, async function (Sort) {
+  
+    } */
 }
