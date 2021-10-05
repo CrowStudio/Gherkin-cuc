@@ -2,7 +2,7 @@
 
 Feature: Add more than one of the same product to the shopping cart
   As a customer I should be able to add more than one of the same product to the shopping cart
-  so that I can by the products.
+  so that I can buy the products.
 
   Background: Going to Willys and pressing the accept cookies button
     Given that I am on "https://www.willys.se"
@@ -14,7 +14,7 @@ Feature: Add more than one of the same product to the shopping cart
     When I click the plus sign to add a product
     And click the plus sign of the same product again
     Then the products is added to my shopping cart
-    And I can verify that its more than one
+    And I can verify there is more than one product
 
 #Scenario: Add a product by changing quantity to two manually
 # When I change the quantity of a product from zero to two

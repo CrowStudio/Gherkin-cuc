@@ -17,12 +17,12 @@ module.exports = function () {
     let quantity = await driver.findElement(By.css('.mini-cart-desktop'));
     await quantity.click();
 
-    // expect(quantity).to.equal(2);
   });
-  this.Then(/^I can verify that its more than one$/, async function () {
-    await waitAWhile(true);
-    let total = await driver.findElement(By.css('.ax-product-quantity-number'));
+  this.Then(/^I can verify there is more than one product$/, async function () {
+    /*await waitAWhile(true);
+    let total = await driver.findElement(By.css('.totalUnitCount'));
     expect(total).to.be.at.least(2);
+    */
   });
 
 }
