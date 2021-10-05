@@ -14,7 +14,16 @@ module.exports = function () {
     }
   });
 
-  /*   this.When(/^I click "([^"]*)"$/, async function (Sort) {
-  
-    } */
+  this.When(/^I click "([^"]*)"$/, async function (Sort) {
+    let categoryButton = await driver.findElement(By.css('[href="/sortiment/' + Sort + '"]'));
+    await categoryButton.click();
+    await waitAWhile(true);
+  });
+
+  this.When(/^thereafter click "([^"]*)"$/, async function (SubSort) {
+    await driver.wait(until.elementsLocated(by.css('[href="/sortiment/' + SubSort + '"]')), 20000);
+    let subCatButton = await driver.findElement(By.css('[href="/sortiment/' + SubSort + '"]'));
+    await subCatButton.click();
+    await waitAWhile(true);
+  });
 }
