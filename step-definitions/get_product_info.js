@@ -10,8 +10,8 @@ module.exports = function () {
     await waitAWhile(true);
     let productInfo = await driver.findElement(By.css('.info-block.description'));
     await productInfo;
+    expect(productInfo).to.not.equal(null);
 
-    //funkar ej
 
   });
 
