@@ -4,7 +4,8 @@
   "description": "Our very awesome school project.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/updated-selenium-cucumber-js/index.js"
+    "test": "node ./node_modules/updated-selenium-cucumber-js/index.js",
+    "cat": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/select_category.feature"
   },
   "repository": {
     "type": "git",
