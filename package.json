@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/updated-selenium-cucumber-js/index.js",
-    "cat": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/select_category.feature"
+    "cat": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/select_category.feature",
+    "add_one": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/add_one_product.feature"
   },
   "repository": {
     "type": "git",
