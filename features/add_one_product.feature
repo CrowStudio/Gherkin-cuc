@@ -15,7 +15,14 @@ Feature: Add one product to the shopping cart
     And click the shopping cart
     Then I should see a quantity of one of the product in the shopping cart
 
-  Scenario: Add a product by changing quantity to one
+  Scenario: Add a product by changing quantity to one and pressing ENTER key
     When I change the quantity of a product from zero to one
+    And press the ENTER key
+    And click the shopping cart
+    Then I should see a quantity of one of the product in the shopping cart
+
+  Scenario: Add a product by changing quantity to one and pressing OK button
+    When I change the quantity of a product from zero to one
+    And click the OK button
     And click the shopping cart
     Then I should see a quantity of one of the product in the shopping cart
