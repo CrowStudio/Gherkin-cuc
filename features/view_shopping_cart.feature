@@ -10,6 +10,6 @@ Feature: View shopping cart
     And we have been through the initial select delivery popup
     Then I should be able to see some products
 
-  Scenario: See products in the shopping cart
+  Scenario: See added products in the shopping cart
     When I click the shopping cart
-    Then I should see the added products in the shopping cart
+    Then I should see the added products in my shopping cart
