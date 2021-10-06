@@ -9,13 +9,13 @@ module.exports = function () {
   });
 
   this.When(/^I change the quantity of a product from zero to "([^"]*)"$/, async function (quantity) {
-    let quantityInput = await driver.findElement(by.css('input[name="quantity"]'));
+    let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
     await quantityInput.sendKeys(quantity);
     await waitAWhile(true);
   });
 
   this.When(/^press the enter key$/, async function () {
-    let quantityInput = await driver.findElement(by.css('input[name="quantity"]'));
+    let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
     await quantityInput.sendKeys(selenium.Key.ENTER);
     await waitAWhile(true);
   });
@@ -33,6 +33,9 @@ module.exports = function () {
 
   this.Then(/^I should see a quantity of one of the product in the shopping cart$/, async function () {
 
+    let quantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
+    expect(quantity).to.equal(1);
+    await waitAWhile(true);
   });
 
 }
