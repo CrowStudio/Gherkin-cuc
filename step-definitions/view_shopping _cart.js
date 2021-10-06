@@ -8,8 +8,8 @@ module.exports = function () {
   });
 
   this.Then(/^I should see the added products in my shopping cart$/, async function () {
-    let shopCart = await driver.findElement(By.css('.cart-mini-list'));
-    expect(shopCart).to.not.equal(0);
+    let shopCartList = await driver.findElement(By.css('.cart-mini-list'));
+    expect(shopCartList).to.not.equal(0);
     await waitAWhile(true);
 
 
