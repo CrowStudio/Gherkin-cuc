@@ -9,7 +9,7 @@ module.exports = function() {
 
   this.When(/^I click Meny$/, async function() {
     if(sideNav.length === 1) {
-      let menuButton = await driver.findElement(By.css('button.ax-toolbar-btn'));
+      let menuButton = await driver.findElement(By.css('.ax-toolbar-btn'));
       await menuButton.click();
     }
   });
