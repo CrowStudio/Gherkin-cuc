@@ -9,6 +9,8 @@ Feature: View shopping cart
     And I click the accept cookies button
     And we have been through the initial select delivery popup
     Then I should be able to see some products
+    When I click the plus sign for a product
+    Then I should see a quantity of one of the product in the shopping cart
 
   Scenario: See added products in the shopping cart
     When I click the shopping cart
