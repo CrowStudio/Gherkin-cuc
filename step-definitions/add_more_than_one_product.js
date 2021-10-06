@@ -19,10 +19,12 @@ module.exports = function () {
 
   });
   this.Then(/^I can verify there is more than one product$/, async function () {
-    /*await waitAWhile(true);
-    let total = await driver.findElement(By.css('.totalUnitCount'));
-    expect(total).to.be.at.least(2);
-    */
+    await waitAWhile(true);
+    let totalQuantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
+
+    //let total = await driver.findElement(By.css('.totalUnitCount'));
+    //expect(total).to.be.at.least(2);
+    //console.log(total);
   });
 
 }
