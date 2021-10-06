@@ -10,14 +10,12 @@ module.exports = function () {
     if (sideNav.length === 1) {
       let menuButton = await driver.findElement(By.css('button.ax-toolbar-btn'));
       await menuButton.click();
-      await waitAWhile(true);
     }
   });
 
   this.When(/^I click "([^"]*)"$/, async function (Sort) {
     let categoryButton = await driver.findElement(By.css('[href="/sortiment/' + Sort + '"]'));
     await categoryButton.click();
-    await waitAWhile(true);
   });
 
   this.When(/^thereafter click "([^"]*)"$/, async function (SubSort) {
