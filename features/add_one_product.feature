@@ -12,17 +12,14 @@ Feature: Add one product to the shopping cart
 
   Scenario: Add a product by clicking plus one time
     When I click the plus sign for a product
-    And click the shopping cart
     Then I should see a quantity of one of the product in the shopping cart
 
   Scenario: Add a product by changing quantity to one and pressing ENTER key
-    When I change the quantity of a product from zero to one
+    When I change the quantity of a product from zero to "1"
     And press the enter key
-    And click the shopping cart
     Then I should see a quantity of one of the product in the shopping cart
 
   Scenario: Add a product by changing quantity to one and pressing OK button
-    When I change the quantity of a product from zero to one
+    When I change the quantity of a product from zero to "1"
     And click the ok button
-    And click the shopping cart
     Then I should see a quantity of one of the product in the shopping cart
