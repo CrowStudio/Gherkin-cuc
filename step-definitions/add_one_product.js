@@ -26,11 +26,6 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
-  //this.When(/^click the shopping cart$/, async function () {
-  //let shoppingCartButton = await driver.findElement(By.css('.mini-cart-desktop'));
-  //await shoppingCartButton.click();
-  //});
-
   this.Then(/^I should see a quantity of one of the product in the shopping cart$/, async function () {
 
     let quantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
