@@ -11,17 +11,17 @@ module.exports = function () {
   });
 
   this.When(/^confirm by clicking the red Töm-button$/, async function () {
-    let manyButtons = await driver.findElements(By.css('.md-ripple-container'));
-
+    //let manyButtons = await driver.findElements(By.css('.md-ripple-container'));
+    let emptyButton = await driver.findElements(By.css('.ax-btn-primary.md-button.md-ink-ripple'));
 /*     for (let button of manyButtons) {
       let content = (await button.getText()).includes('Töm');
       if (content === 'Töm') {
         comfirm = await button;
       };
     }
-     
+     */
 
-    await manyButtons.click(); */
+    await emptyButton[1].click(); 
     await waitAWhile(true);
   });
 
