@@ -18,3 +18,4 @@ Feature: Empty shopping cart
     When I click the white Töm-button in the shopping cart
     And then comfirming by clicking the red Töm-button
     Then I should have an empty shopping cart
+    And the total price should be "0,00" kr
