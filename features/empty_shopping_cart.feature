@@ -7,8 +7,8 @@ Feature: Empty shopping cart
 
   Background: Click cookies button
     Given that I am on "https://www.willys.se"
-      And I click the accept cookies button
-      And we have been through the initial select delivery popup
+    And I click the accept cookies button
+    And we have been through the initial select delivery popup
     When I click the plus sign for a product
     Then I should see a quantity of one of the product in the shopping cart
     When I click the shopping cart
@@ -16,5 +16,5 @@ Feature: Empty shopping cart
 
   Scenario:
     When I click the white Töm-button in the shopping cart
-      And then comfirming by clicking the red Töm-button
-    Then I should have a empty shopping cart
+    And then comfirming by clicking the red Töm-button
+    Then I should have an empty shopping cart
