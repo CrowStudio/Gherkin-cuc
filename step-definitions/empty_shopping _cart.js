@@ -1,6 +1,7 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
 module.exports = function () {
+
   this.When(/^I click the white Töm-button in the shopping cart$/, async function () {
     let emptyButton = await driver.findElements(By.css('#selenium--miniCart-empty-cart-btn'));
     await emptyButton.click();
@@ -8,7 +9,7 @@ module.exports = function () {
 
   });
 
-  this.When(/^then comfirming by clicking the red Töm-button$/, async function () {
+  this.When(/^confirm by clicking the red Töm-button$/, async function () {
     let confirmEmptyButton = await driver.findElements(By.css('.ax-button-primary'));
     await confirmEmptyButton.click();
     await waitAWhile(true);
