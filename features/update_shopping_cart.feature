@@ -7,15 +7,18 @@ Feature: Update quantity of a product in the shopping cart
 
   Background: Going to Willys and pressing the accept cookies button
     Given that I am on "https://www.willys.se"
-    And I click the accept cookies button
-    And we have been through the initial select delivery popup
+      And I click the accept cookies button
+      And we have been through the initial select delivery popup
     Then I should be able to see some products
-    When I click the plus sign for a product
-    And I click the shopping cart
-
+    When I click the plus sign to add a product
+      And click the plus sign of the same product again
+      And I click the shopping cart
 
   Scenario: Updating quantity by clicking plus
+    When I click the plus sign in the shopping cart
 
   Scenario: Updating quantity by clicking minus
+    When I click the minus sign in the shopping cart
 
   Scenario: Updating quantity by changing number directly in quantity
+    When I change the number directly in quantity to a random number
