@@ -16,10 +16,10 @@ Feature: Select a Product Category on willys.se
       And I click Meny
     When I click <Sort>
       And thereafter click <SubSort>
-    Then I should see
+    Then I should see <Url>
 
   Examples:
-  | Sort              | SubSort |
-  | "frukt-och-gront" | "frukt" |
-  | "vegetariskt"     | "korv"  |
+  | Sort              | SubSort | Url                                                     |
+  | "frukt-och-gront" | "frukt" | "https://www.willys.se/sortiment/frukt-och-gront/frukt" |
+  | "vegetariskt"     | "korv"  | "https://www.willys.se/sortiment/vegetariskt/korv"      |
 

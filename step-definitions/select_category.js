@@ -17,8 +17,8 @@ module.exports = function () {
 
   this.When(/^I click "([^"]*)"$/, async function (sort) {
     let categoryButton = await driver.findElement(By.css('[href="/sortiment/' + sort + '"]'));
-    await categoryButton.click();
     category = sort;
+    await categoryButton.click();
   });
 
   this.When(/^thereafter click "([^"]*)"$/, async function (subSort) {
@@ -28,8 +28,8 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
-  this.Then(/^I should see$/, async function () {
-    let siteURL = await driver.findElement(By.css('[rel="canonical"]'));
-    //[href="https://www.willys.se/sortiment/frukt-och-gront/frukt"]
+  this.Then(/^I should see "([^"]*)"$/, async function (Url) {
+    let siteURL = await (await driver.findElement(By.css('[rel="canonical"]'))).getAttribute("href");;
+    expect(siteURL).to.equal(Url);
   });
 }
