@@ -11,13 +11,6 @@ module.exports = function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
     await plusButton.click();
   });
-  /*
-    this.Then(/^the products is added to my shopping cart$/, async function() {
-      await waitAWhile(true);
-      let quantity = await driver.findElement(By.css('.mini-cart-desktop'));
-      await quantity.click();
-    });
-    */
 
   this.Then(/^I can verify there is more than one product$/, async function () {
     await waitAWhile(true);
@@ -25,9 +18,21 @@ module.exports = function () {
     expect(totalQuantity).to.be.at.least(2);
     await waitAWhile(true);
 
-    //let total = await driver.findElement(By.css('.totalUnitCount'));
-    //expect(total).to.be.at.least(2);
-    //console.log(total);
+  });
+  this.Then(/^I should see a quantity of 100 of the product in the shopping cart$/, async function () {
+    await waitAWhile(true);
+    let totalQuantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
+    expect(totalQuantity).to.equal(100);
+    await waitAWhile(true);
+
+  });
+
+  this.Then(/^I should see a quantity of 999 of the product in the shopping cart$/, async function () {
+    await waitAWhile(true);
+    let totalQuantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
+    expect(totalQuantity).to.equal(999);
+    await waitAWhile(true);
+
   });
 
 }
