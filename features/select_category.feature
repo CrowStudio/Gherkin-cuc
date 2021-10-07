@@ -16,11 +16,10 @@ Feature: Select a Product Category on willys.se
       And I click Meny
     When I click <Sort>
       And thereafter click <SubSort>
-    Then I should get a listing of products
-      And the search result should contain only products related to SubSort
+    Then I should see
 
   Examples:
-  | Sort              | SubSort                 |
-  | "frukt-och-gront" | "frukt-och-gront/frukt" |
-  | "vegetariskt"     | "vegetariskt/korv"      |
+  | Sort              | SubSort |
+  | "frukt-och-gront" | "frukt" |
+  | "vegetariskt"     | "korv"  |
 
