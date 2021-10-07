@@ -13,8 +13,7 @@ Feature: Add more than one of the same product to the shopping cart
   Scenario: Add products by clicking the plus button more than once
     When I click the plus sign to add a product
     And click the plus sign of the same product again
-    Then the products is added to my shopping cart
-    And I can verify there is more than one product
+    Then I can verify there is more than one product
 
 #Scenario: Add a product by changing quantity to two manually
 # When I change the quantity of a product from zero to two
