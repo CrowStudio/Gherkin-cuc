@@ -27,7 +27,7 @@ module.exports = function () {
 
   });
 
-  this.Then(/^I should see a quantity of 999 of the product in the shopping cartt$/, async function () {
+  this.Then(/^I should see a quantity of 999 of the product in the shopping cart$/, async function () {
     await waitAWhile(true);
     let totalQuantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
     expect(totalQuantity).to.equal(999);
