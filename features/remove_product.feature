@@ -1,0 +1,1 @@
+#As a customer, I want to be able to remove any product from the shopping cart, so that I can change my mind.
