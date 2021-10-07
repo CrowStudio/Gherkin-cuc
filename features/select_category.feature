@@ -16,7 +16,7 @@ Feature: Select a Product Category on willys.se
       And I click Meny
     When I click <Sort>
       And thereafter click <SubSort>
-    Then I should see <Url>
+    Then I should be at <Url>
 
   Examples:
   | Sort              | SubSort | Url                                                     |

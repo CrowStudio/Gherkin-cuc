@@ -28,7 +28,7 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
-  this.Then(/^I should see "([^"]*)"$/, async function (Url) {
+  this.Then(/^I should be at "([^"]*)"$/, async function (Url) {
     let siteURL = await (await driver.findElement(By.css('[rel="canonical"]'))).getAttribute("href");;
     expect(siteURL).to.equal(Url);
   });
