@@ -8,7 +8,10 @@ Feature: Test checkout functionality
       And we have been through the initial select delivery popup
     Then I should be able to see some products
 
-  Scenario: Test the checkout page
-    #When I click the plus sign to add a product
-    #And click the plus sign of the same product again
-    #Then I can verify there is more than one product
+  Scenario: Checking out
+    When I click the plus sign to add a product
+      And click the plus sign of the same product again
+      And I click the shopping cart
+      And we should have a price higher than zero
+      And we click the gå till kassan button
+    Then we should see the checkout screen
