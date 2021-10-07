@@ -16,9 +16,12 @@ Feature: Update quantity of a product in the shopping cart
 
   Scenario: Updating quantity by clicking plus
     When I click the plus sign in the shopping cart
+    Then the quantity should change
 
   Scenario: Updating quantity by clicking minus
     When I click the minus sign in the shopping cart
+    Then the quantity should change
 
   Scenario: Updating quantity by changing number directly in quantity
     When I change the number directly in quantity to a random number
+    Then the quantity should change

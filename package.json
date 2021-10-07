@@ -12,7 +12,8 @@
     "viewCart": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/view_shopping_cart.feature",
     "emptyCart": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/empty_shopping_cart.feature",
     "updateCart": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/update_shopping_cart.feature",
-    "checkout": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/checkout.feature"
+    "checkout": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/checkout.feature",
+    "finalPrice": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/final_price.feature"
   },
   "repository": {
     "type": "git",
