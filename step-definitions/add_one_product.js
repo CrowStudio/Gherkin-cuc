@@ -10,6 +10,8 @@ module.exports = function() {
 
   this.When(/^I change the quantity of a product from zero to "([^"]*)"$/, async function(quantity) {
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
+    await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
+    await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(quantity);
     await waitAWhile(true);
   });
