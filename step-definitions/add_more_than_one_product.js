@@ -1,26 +1,29 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
-module.exports = function() {
+module.exports = function () {
 
-  this.When(/^I click the plus sign to add a product$/, async function() {
+  this.When(/^I click the plus sign to add a product$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
     await plusButton.click();
   });
 
-  this.When(/^click the plus sign of the same product again$/, async function() {
+  this.When(/^click the plus sign of the same product again$/, async function () {
     let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
     await plusButton.click();
   });
+  /*
+    this.Then(/^the products is added to my shopping cart$/, async function() {
+      await waitAWhile(true);
+      let quantity = await driver.findElement(By.css('.mini-cart-desktop'));
+      await quantity.click();
+    });
+    */
 
-  this.Then(/^the products is added to my shopping cart$/, async function() {
-    await waitAWhile(true);
-    let quantity = await driver.findElement(By.css('.mini-cart-desktop'));
-    await quantity.click();
-  });
-
-  this.Then(/^I can verify there is more than one product$/, async function() {
+  this.Then(/^I can verify there is more than one product$/, async function () {
     await waitAWhile(true);
     let totalQuantity = +(await (await driver.findElement(By.css('#selenium--cart-badge-total-unit-count'))).getText());
+    expect(totalQuantity).to.be.at.least(2);
+    await waitAWhile(true);
 
     //let total = await driver.findElement(By.css('.totalUnitCount'));
     //expect(total).to.be.at.least(2);
