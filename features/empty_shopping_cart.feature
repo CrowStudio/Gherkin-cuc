@@ -16,14 +16,12 @@ Feature: Empty shopping cart
 
   Scenario:
     When I click the white Töm-button in the shopping cart
-    #And wait for the empty cart pop-up to show
       And confirm by clicking the red Töm-button
     Then I should have an empty shopping cart
      And the total price should be "0,00" kr
 
   Scenario:
     When I click the white Töm-button in the shopping cart
-      And wait for the empty cart pop-up to show
       And cancel by clicking the Avbryt-button
     Then I should have cancelled the empty shopping cart
 
