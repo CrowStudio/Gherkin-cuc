@@ -16,12 +16,11 @@ module.exports = function () {
   });
 
   this.Then(/^I should have an empty shopping cart$/, async function () {
-    /* let shopCartInfo = await driver.findElements(By.css('#selenium--miniCart-empty-info'));
-    expect(shopCartInfo).to.equal(0);
+    let emptyCart = await (await driver.findElement(By.css('.selenium--miniCart-empty-text'))).getText();
+    expect(emptyCart).to.equal("Din varukorg är tom!");
     await waitAWhile(true);
-    console.log(shopCartInfo); */
-
   });
+  
   this.Then(/^the total price should be "([^"]*)" kr$/, async function () {
 /*     let totalAmount = await driver.findElements(By.css('#selenium-miniCart-total-amount'));
     expect(totalAmount).to.equal(0, 00);
