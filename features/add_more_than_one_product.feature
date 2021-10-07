@@ -16,8 +16,11 @@ Feature: Add more than one of the same product to the shopping cart
     Then I can verify there is more than one product
 
   Scenario: Add a product by changing quantity to more then one
-    When I change the quantity of a product to
-    And
+    When I change the quantity of a product from zero to "100"
+    And press the enter key
     Then I should see a quantity of one of the product in the shopping cart
 
   Scenario: Add a product by more than 999
+    When I change the quantity of a product from zero to "1000"
+    And press the enter key
+    Then I should see a quantity of one of the product in the shopping cart
