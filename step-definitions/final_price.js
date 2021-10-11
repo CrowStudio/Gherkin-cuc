@@ -17,10 +17,19 @@ module.exports = function() {
       headerText = await (await driver.findElement(By.css('h2'))).getText();
       await driver.sleep(100);
     }
+    
     expect(headerText).to.equal('Glass');
   });
 
   this.When(/^I put one of each in the shopping cart$/, async function(){
+    let loadMore = driver.findElement(By.css('button[class*="LoadMore"]'));
+    await loadMore.click();
+    await driver.executeScript('window.scrollTo(0,0)');
+
+    let products = await driver.findElements(By.css('[itemtype="https://schema.org/Product"]'));
+    productsToBuy = [];
+
+
     expect(0).to.equal(0);
   });
 
