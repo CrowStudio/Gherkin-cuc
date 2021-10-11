@@ -34,7 +34,6 @@ module.exports = function() {
     await waitAWhile(true);
   });
 
-  // This function is unnecessary for final product, but should be included somewhere to have a verification method.
   this.Then(/^I should be able to see some products$/, async function() {
     let productArray = await driver.findElements(By.css(".ax-product-puff-head"));
     expect(productArray.length).to.not.equal(0);
