@@ -14,15 +14,13 @@ module.exports = function () {
   });
 
   this.When(/^I click the minus button for a product in the shopping cart$/, async function () {
-    let minusButton = await driver.findElement(By.css('.md-3-line'));
-    minusButton = await minusButton.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
+    let minusButton = await driver.findElement(By.css('.md-3-line .selenium--product-quantity-remove-from-cart-btn'));
     await minusButton.click();
     await waitAWhile(true);
   });
   
   this.When(/^I change the quantity for a product to 0$/, async function () {
-    let zeroInput = await driver.findElement(By.css('.md-3-line'));
-    zeroInput = zeroInput.findElement(By.css('input[name="quantity"]'));
+    let zeroInput = await driver.findElement(By.css('.md-3-line input[name="quantity"]'));
     await zeroInput.sendKeys(selenium.Key.CONTROL + "a");
     await zeroInput.sendKeys(selenium.Key.DELETE);
     await zeroInput.sendKeys(0, selenium.Key.ENTER);
@@ -48,8 +46,7 @@ module.exports = function () {
   });
 
   this.Then(/^the product shall be removed from the shopping cart$/, async function () {
-    let shopCartList = await driver.findElement(By.css('.md-3-line'));
-    shopCartList = await (await shopCartList.findElement(By.css('h3')).getText());
+    let shopCartList = await (await driver.findElement(By.css('.md-3-line h3')).getText());
     console.log(shopCartList);
     expect(shopCartList).to.not.equal(prodName);
   });
