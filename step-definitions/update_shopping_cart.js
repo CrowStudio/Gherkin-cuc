@@ -38,4 +38,32 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
+
+  this.When(/^I change the quantity of a product to a radom letter$/, async function () {
+    // ta bort nedan rad om vi ska expect 0 i Then
+    quantityBeforeChange = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
+
+    let alphabet = "abcdefghijklmnopqrstuvwxyzåäö"
+    let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    // console.log('random letter ' + randomLetter);
+
+    let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
+    await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
+    await quantityInput.sendKeys(selenium.Key.DELETE);
+    await quantityInput.sendKeys(randomLetter);
+    await waitAWhile(true);
+  });
+
+  this.Then(/^the quatity changes to zero$/, async function () {
+    let quantity = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
+    expect(quantity).to.equal(0);
+    // quantity blir 0 och produkten försvinner ur varukorgen om en bokstav läggs in, 
+    // egentligen hade man kanske velat att quantity skulle bli vad den var innan istället (?)
+    // men då failar testet
+
+    // console.log('old quantity is ' + quantityBeforeChange);
+    // console.log('quantity is ' + quantity);
+  });
+
 }

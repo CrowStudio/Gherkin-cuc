@@ -35,12 +35,11 @@ module.exports = function() {
   });
 
 
-
   this.When(/^I change the quantity of a product from zero to a radom letter$/, async function () {
     let alphabet = "abcdefghijklmnopqrstuvwxyzåäö"
     let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-    console.log('random letter ' + randomLetter);
+    // console.log('random letter ' + randomLetter);
 
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
     await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
@@ -53,7 +52,7 @@ module.exports = function() {
     let quantity = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
     expect(quantity).to.equal(0);
 
-    console.log('quantity is ' + quantity);
+    // console.log('quantity is ' + quantity);
   });
 
 }

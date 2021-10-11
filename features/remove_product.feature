@@ -13,8 +13,7 @@ Feature: Remove a product
     Then I can verify there is more than one product
 
   Scenario: Remove a product from shopping cart
-    When I click the mini cart
-      And click the Gå till kassan-button
+    When I click the Gå till kassan-button
       And click the X-button
     Then the product should be removed from the cart
 
