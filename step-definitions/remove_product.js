@@ -8,11 +8,7 @@ module.exports = function () {
     await minusButton.click();
     await waitAWhile(true);
   });
-
-  this.Then(/^the product should be removed$/, async function () {
-    
   
-  });
   this.When(/^I change the quantity for a product to "0"$/, async function () {
     let zeroInput = await driver.findElement(By.css(''));
     await zeroInput.sendKeys(selenium.Key.ENTER);
@@ -20,7 +16,7 @@ module.exports = function () {
 
   });
 
-  this.Then(/^the product should be removed from the shopping cart$/, async function () {
+  this.Then(/^the product shall be removed from the shopping cart$/, async function () {
     
   });
 
