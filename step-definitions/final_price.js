@@ -4,8 +4,10 @@ let productsToBuy;
 
 module.exports = function() {
   this.Given(/^that I am on the Ice Cream category page$/, async function(){
-    waitAWhile(true);
+    
+    await driver.wait(until.elementsLocated(By.css('a[href="/sortiment/fryst"]')), 10000);
     let frystLink = await driver.findElement(By.css('a[href="/sortiment/fryst"]'));
+    await driver.executeScript('document.querySelector(\'a[href="/sortiment/fryst"]\').scrollIntoView()');
     await frystLink.click();
 
     await driver.wait(until.elementsLocated(By.css('a[href="/sortiment/fryst/glass"]')), 10000);
