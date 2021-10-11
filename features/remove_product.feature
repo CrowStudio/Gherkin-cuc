@@ -20,9 +20,8 @@ Feature: Remove a product
       And click the X-button
     Then the product shall be removed from the shopping cart
 
-#ändra twice här kanske...
   Scenario: Remove a product from shopping cart with minus button
-    When I click the minus button twice for a product in the shopping cart
+    When I click the minus button for a product in the shopping cart
     Then the product shall be removed from the shopping cart
 
   Scenario: Remove product from shopping cart by changing the quantity to zero 
