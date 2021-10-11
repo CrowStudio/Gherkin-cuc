@@ -14,7 +14,7 @@
     "updateCart": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/update_shopping_cart.feature",
     "checkout": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/checkout.feature",
     "finalPrice": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/final_price.feature",
-    "removeProduct": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/ remove_product.feature"
+    "removeProduct": "node ./node_modules/updated-selenium-cucumber-js/index.js -f features/remove_product.feature"
   },
   "repository": {
     "type": "git",
