@@ -26,5 +26,5 @@ Feature: Add one product to the shopping cart
 
   Scenario: Changing quantity to a radom letter and pressing ENTER key
     When I change the quantity of a product from zero to a radom letter
-    And press the enter key
+      And press the enter key
     Then the quatity should remain zero
