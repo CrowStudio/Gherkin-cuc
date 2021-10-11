@@ -21,11 +21,11 @@ module.exports = function () {
     await waitAWhile(true);
   });
   
-  this.Then(/^the total price should be "([^"]*)" kr$/, async function () {
-/*     let totalAmount = await driver.findElements(By.css('#selenium-miniCart-total-amount'));
-    expect(totalAmount).to.equal(0, 00);
+ /* this.Then(/^the total price should be "([^"]*)" kr$/, async function () {
+ let totalAmount = await driver.findElements(By.css('.amount'));
+    expect(totalAmount).to.equal(0,00);
 
-    await waitAWhile(true); */
-  })
+    await waitAWhile(true); 
+  })*/
 
 }
