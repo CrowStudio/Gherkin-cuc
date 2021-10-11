@@ -16,6 +16,7 @@ module.exports = function () {
   this.When(/^I click the minus button twice for a product in the shopping cart$/, async function () {
     let minusButton = await driver.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
     await minusButton.click();
+    //ta bort denna, ska ju bara ha en
     await minusButton.click();
     await waitAWhile(true);
     //fult som stryk - med loop
@@ -30,9 +31,26 @@ module.exports = function () {
 
   });
 
+  //la till denna med
+  this.When(/^I click the Gå till kassan-button$/, async function(){
+    let checkOut = await driver.findElement(By.css('.ax-btn-primary.md-button.md-ink-ripple'));
+    await checkOut.click();
+    await waitAWhile(true);
+
+  });
+//och denna jäveln
+  this.When(/^click the X-button$/, async function(){
+    let xButton = await driver.findElement(By.css('.ax-product-remove'));
+    await xButton.click();
+    await waitAWhile();
+
+  });
+
   this.Then(/^the product shall be removed from the shopping cart$/, async function () {
     let shopCartList = await (await driver.findElement(By.css('.cart-mini-list')).getText());
-    expect(shopCartList).not.equal(prodName);
+    expect(shopCartList).to.not.equal(prodName);
+   
+
       //"Ägg 10p Frigående Utomhus M / l");
     
   });
