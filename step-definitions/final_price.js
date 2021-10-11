@@ -4,6 +4,7 @@ let productsToBuy;
 
 module.exports = function() {
   this.Given(/^that I am on the Ice Cream category page$/, async function(){
+    waitAWhile(true);
     let frystLink = await driver.findElement(By.css('a[href="/sortiment/fryst"]'));
     await frystLink.click();
 
