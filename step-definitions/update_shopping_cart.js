@@ -6,16 +6,14 @@ module.exports = function () {
   
   this.When(/^I click the plus sign in the shopping cart$/, async function() {
     quantityBeforeChange = +(await (await driver.findElement(By.css('.md-3-line input[name="quantity"]'))).getAttribute("value"));
-    let plusButton = await driver.findElement(By.css('.md-3-line'));
-    plusButton = await plusButton.findElement(By.css('.selenium--product-quantity-add-to-cart-btn'));
+    let plusButton = await driver.findElement(By.css('.md-3-line .selenium--product-quantity-add-to-cart-btn'));
     await plusButton.click();
     await waitAWhile(true);
   });
 
   this.When(/^I click the minus sign in the shopping cart$/, async function() {
     quantityBeforeChange = +(await (await driver.findElement(By.css('.md-3-line input[name="quantity"]'))).getAttribute("value"));
-    let minusButton = await driver.findElement(By.css('.md-3-line'));
-    minusButton = await minusButton.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
+    let minusButton = await driver.findElement(By.css('.md-3-line .selenium--product-quantity-remove-from-cart-btn'));
     await minusButton.click();
     await waitAWhile(true);
   });
