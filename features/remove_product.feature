@@ -11,6 +11,9 @@ Feature: Remove a product
     When I click the plus sign to add a product
       And I click the plus sign on the next product
     Then I should be able to see some products
+    When I click the shopping cart
+    Then I should see the added products in my shopping cart
+    #la till when and then från view cart
 
   Scenario: Remove a product from shopping cart
     When I click the Gå till kassan-button
