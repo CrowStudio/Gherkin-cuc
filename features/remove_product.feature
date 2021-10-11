@@ -15,12 +15,12 @@ Feature: Remove a product
   Scenario: Remove a product from shopping cart
     When I click the Gå till kassan-button
       And click the X-button
-    Then the product should be removed from the cart
+    Then the product shall be removed from the shopping cart
 
   Scenario: Remove a product from shopping cart with minus button
     When I click the minus button twice for a product in the shopping cart
-    Then the product should be removed
+    Then the product shall be removed from the shopping cart
 
   Scenario: Remove product from shopping cart by changing the quantity to zero 
     When I change the quantity for a product to "0"    
-    Then the product should be removed from the shopping cart
+    Then the product shall be removed from the shopping cart
