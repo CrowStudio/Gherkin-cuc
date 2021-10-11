@@ -17,6 +17,7 @@ module.exports = function () {
 
   this.When(/^I click "([^"]*)"$/, async function (sort) {
     let categoryButton = await driver.findElement(By.css('[href="/sortiment/' + sort + '"]'));
+    await driver.executeScript('document.querySelector(\'[href="/sortiment/' + sort + '"]\').scrollIntoView()');
     category = sort;
     await categoryButton.click();
   });
@@ -24,6 +25,7 @@ module.exports = function () {
   this.When(/^thereafter click "([^"]*)"$/, async function (subSort) {
     await driver.wait(until.elementsLocated(By.css('[href="/sortiment/' + category + '/' + subSort + '"]')), 20000);
     let subCatButton = await driver.findElement(By.css('[href="/sortiment/' + category + '/' + subSort + '"]'));
+    await driver.executeScript('document.querySelector(\'[href="/sortiment/' + category + '/' + subSort + '"]\').scrollIntoView()');
     await subCatButton.click();
     await waitAWhile(true);
   });
