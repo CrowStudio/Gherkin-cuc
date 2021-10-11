@@ -80,7 +80,7 @@ module.exports = function() {
       totalPrice += priceOfOne;
     }
     waitAWhile(true);
-    let miniCartTotalPrice = +(await (await driver.findElement(By.css('[class^="MiniCartstyles__StyledPrice"]'))).getText()).replace('kr','').replace(/\s/g, '').replace(',','.')
+    let miniCartTotalPrice = +(await (await driver.findElement(By.css('[class^="MiniCartstyles__StyledPrice"]'))).getText()).replace('kr','').replace(/\s/g, '').replace(',','.');
     totalPrice = +totalPrice.toFixed(2);
     
     console.log('Pris i korgen: ', miniCartTotalPrice);
