@@ -22,5 +22,5 @@ Feature: Remove a product
     Then the product shall be removed from the shopping cart
 
   Scenario: Remove product from shopping cart by changing the quantity to zero 
-    When I change the quantity for a product to "0"    
+    When I change the quantity for a product to 0   
     Then the product shall be removed from the shopping cart
