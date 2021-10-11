@@ -51,10 +51,15 @@ module.exports = function() {
       // If not kr/st, do nothing
       if (!hasPricePerPiece) { continue; }
 
+      // Set up variables
       let name = await (await product.findElement(By.css('[itemprop="name"]'))).getText();
       let quantity = '1';
       let priceOfOne = +((await (await product.findElement(By.css('[class^="PriceLabel_product-price-text"]'))).getText()).split('\n').join('.').split('./st').join(''));
+      
+      // Push to array
       productsToBuy.push({ name, quantity, priceOfOne });
+      
+      // Send quantity with webdriver
       let quantityField = await product.findElement(By.css('[aria-label="Ändra produktantal"]'));
       await quantityField.sendKeys(quantity, selenium.Key.ENTER);
     }
