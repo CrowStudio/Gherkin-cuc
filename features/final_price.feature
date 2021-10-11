@@ -11,4 +11,5 @@ Feature: Check the total price
   Scenario: Calculate the final price of ice cream
     Given that I am on the Ice Cream category page
     When I put one of each in the shopping cart
+    Then I should be able to show the correct amount of products bought
     Then I should be able to calculate a final price
