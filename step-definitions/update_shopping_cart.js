@@ -6,14 +6,14 @@ module.exports = function () {
   
   this.When(/^I click the plus sign in the shopping cart$/, async function() {
     quantityBeforeChange = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
-    let plusButton = await driver.findElement(By.css('.ax-product-quantity-plus'));
+    let plusButton = await driver.findElement(By.css('div[class="product-quantity-sm selenium--mini-cart-quantity ax-product-quantity is-in-cart"]>div[class="ax-product-quantity-instock"]>button[class^="ax-btn ax-product-quantity-btn ax-product-quantity-plus"]'));
     await plusButton.click();
     await waitAWhile(true);
   });
 
   this.When(/^I click the minus sign in the shopping cart$/, async function() {
     quantityBeforeChange = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
-    let minusButton = await driver.findElement(By.css('.ax-product-quantity-minus'));
+    let minusButton = await driver.findElement(By.css('div[class="product-quantity-sm selenium--mini-cart-quantity ax-product-quantity is-in-cart"]>div[class="ax-product-quantity-instock"]>button[class^="ax-btn ax-product-quantity-btn ax-product-quantity-minus"]'));
     await minusButton.click();
     await waitAWhile(true);
   });
@@ -24,7 +24,7 @@ module.exports = function () {
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
     await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
     await quantityInput.sendKeys(selenium.Key.DELETE);
-    await quantityInput.sendKeys(quantity, (selenium.Key.ENTER));
+    await quantityInput.sendKeys(quantity, selenium.Key.ENTER);
     await waitAWhile(true);
   });
 
