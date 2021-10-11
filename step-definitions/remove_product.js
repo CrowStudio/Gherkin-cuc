@@ -13,7 +13,7 @@ module.exports = function () {
   
   });
   this.When(/^I change the quantity for a product to "0"$/, async function () {
-    let zeroInput = await driver.findElement(By.css('input[name= "quantity-input]'));
+    let zeroInput = await driver.findElement(By.css(''));
     await zeroInput.sendKeys(selenium.Key.ENTER);
     await waitAWhile(true);
 
