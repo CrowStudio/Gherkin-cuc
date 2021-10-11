@@ -13,46 +13,45 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
-  this.When(/^I click the minus button twice for a product in the shopping cart$/, async function () {
-    let minusButton = await driver.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
-    await minusButton.click();
-    //ta bort denna, ska ju bara ha en
+  this.When(/^I click the minus button for a product in the shopping cart$/, async function () {
+    let minusButton = await driver.findElement(By.css('.md-3-line'));
+    minusButton = await minusButton.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
     await minusButton.click();
     await waitAWhile(true);
-    //fult som stryk - med loop
   });
   
   this.When(/^I change the quantity for a product to 0$/, async function () {
-    let zeroInput = await driver.findElements(By.css('input[name = "quantity"]'));
-    await zeroInput[1].sendKeys(selenium.Key.CONTROL + "a");
-    await zeroInput[1].sendKeys(selenium.Key.DELETE);
-    await zeroInput[1].sendKeys(0, selenium.Key.ENTER);
+    let zeroInput = await driver.findElement(By.css('.md-3-line'));
+    zeroInput = zeroInput.findElement(By.css('input[name="quantity"]'));
+    await zeroInput.sendKeys(selenium.Key.CONTROL + "a");
+    await zeroInput.sendKeys(selenium.Key.DELETE);
+    await zeroInput.sendKeys(0, selenium.Key.ENTER);
     await waitAWhile(true);
 
   });
 
-  //la till denna med
   this.When(/^I click the Gå till kassan-button$/, async function(){
     let checkOut = await driver.findElement(By.css('.ax-btn-primary.md-button.md-ink-ripple'));
     await checkOut.click();
     await waitAWhile(true);
 
   });
-//och denna jäveln
+
   this.When(/^click the X-button$/, async function(){
-    let xButton = await driver.findElement(By.css('.ax-product-remove'));
-    await xButton.click();
+    let xButton = await driver.findElements(By.css('.ax-product-remove'));
+    await xButton[1].click();
     await waitAWhile();
+    let comfirm = await driver.findElements(By.css('.ax-btn-primary.md-button'));
+    await comfirm[1].click();
+    await waitAWhile(true);
 
   });
 
   this.Then(/^the product shall be removed from the shopping cart$/, async function () {
-    let shopCartList = await (await driver.findElement(By.css('.cart-mini-list')).getText());
+    let shopCartList = await driver.findElement(By.css('.md-3-line'));
+    shopCartList = await (await shopCartList.findElement(By.css('h3')).getText());
+    console.log(shopCartList);
     expect(shopCartList).to.not.equal(prodName);
-   
-
-      //"Ägg 10p Frigående Utomhus M / l");
-    
   });
 
 }
