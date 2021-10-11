@@ -9,8 +9,7 @@ Feature: Remove a product
       And we have been through the initial select delivery popup
     Then I should be able to see some products
     When I click the plus sign to add a product
-      And click the plus sign of the same product again
-    Then I can verify there is more than one product
+      And I click the plus sign on the next product
 
   Scenario: Remove a product from shopping cart
     When I click the Gå till kassan-button
