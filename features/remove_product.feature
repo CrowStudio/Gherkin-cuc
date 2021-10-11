@@ -19,8 +19,8 @@ Feature: Remove a product
     Then the product should be removed from the cart
 
   Scenario: Remove a product from shopping cart with minus button
-    When I click the minus button for a product in the shopping cart
-    Then one item of the product should be removed
+    When I click the minus button twice for a product in the shopping cart
+    Then the product should be removed
 
     #click many times on the minus button
 
