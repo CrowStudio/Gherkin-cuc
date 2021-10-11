@@ -12,6 +12,12 @@ Feature: Remove a product
       And click the plus sign of the same product again
     Then I can verify there is more than one product
 
-  Scenario: Remove product from shopping cart with minus button
+  Scenario: Remove a product from shopping cart with minus button
+    When I click the minus button for a product in the shopping cart
+    Then one item of the product should be removed
 
-  Scenario: Remove product from shopping cart by changing the quantity to zero    
+    #click many times on the minus button
+
+  Scenario: Remove product from shopping cart by changing the quantity to zero 
+    When I change the quantity for a product to "0"    
+    Then the product should be removed from the shopping cart
