@@ -27,7 +27,7 @@ module.exports = function() {
     expect(headerText).to.equal('Flerpack- & styckglass');
   });
 
-  this.When(/^I put one of each in the shopping cart$/, async function(){
+  this.When(/^I put one of each that has a set price in the shopping cart$/, async function(){
 
     // Click on "visa fler" until all products are visible.
     let loadMore = [];
