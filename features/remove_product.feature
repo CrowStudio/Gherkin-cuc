@@ -22,8 +22,6 @@ Feature: Remove a product
     When I click the minus button twice for a product in the shopping cart
     Then the product should be removed
 
-    #click many times on the minus button
-
   Scenario: Remove product from shopping cart by changing the quantity to zero 
     When I change the quantity for a product to "0"    
     Then the product should be removed from the shopping cart
