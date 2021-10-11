@@ -21,11 +21,10 @@ module.exports = function () {
     await waitAWhile(true);
   });
   
- /* this.Then(/^the total price should be "([^"]*)" kr$/, async function () {
- let totalAmount = await driver.findElements(By.css('.amount'));
-    expect(totalAmount).to.equal(0,00);
-
+ this.Then(/^the total price should be 0,00 kr$/, async function () {
+   let totalAmount = await (await driver.findElement(By.css('.amount'))).getText();
+   expect(totalAmount).to.equal("0,00 kr");
     await waitAWhile(true); 
-  })*/
+  })
 
 }
