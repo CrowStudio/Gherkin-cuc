@@ -3,7 +3,7 @@ const { waitAWhile } = require('../helpers/wait.js');
 module.exports = function () {
 
   this.When(/^I click the minus button for a product in the shopping cart$/, async function () {
-    let minusButton = await driver.findElement(By.css(''));
+    let minusButton = await driver.findElement(By.css('.selenium--product-quantity-remove-from-cart-btn'));
     await minusButton.click();
     await waitAWhile(true);
   });
