@@ -13,8 +13,8 @@ module.exports = function () {
 
   this.When(/^I click the minus sign in the shopping cart$/, async function() {
     quantityBeforeChange = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
-    let plusButton = await driver.findElement(By.css('.ax-product-quantity-minus'));
-    await plusButton.click();
+    let minusButton = await driver.findElement(By.css('.ax-product-quantity-minus'));
+    await minusButton.click();
     await waitAWhile(true);
   });
 
