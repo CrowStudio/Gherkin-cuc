@@ -26,9 +26,6 @@ Feature: Update quantity of a product in the shopping cart
     When I change the number directly in quantity to a random number
     Then the quantity should change
 
-  Scenario: Changing quantity to a radom letter 
-    When I change the quantity of a product to a radom letter
-    Then the quatity changes to zero 
-    # quantity blir 0 och produkten försvinner ur varukorgen om en bokstav läggs in,
-    # egentligen hade man kanske velat att quantity skulle bli vad den var innan istället (?) 
-    # men då failar testet
+  Scenario: Changing quantity to a random letter 
+    When I change the quantity of a product to a random letter
+    Then the quantity should remain the same as before
