@@ -1,10 +1,15 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
 module.exports = function () {
+  let prodName;
 
   this.When(/^I click the plus sign on the next product$/, async function(){
+    await waitAWhile(true);
     let plusButton = await driver.findElements(By.css('.ax-product-quantity-plus'))
     await plusButton[1].click();
+    prodName = await driver.findElements(By.css('.ax-product-title'));
+    prodName = await prodName[1].getText();
+    console.log(prodName);
     await waitAWhile(true);
   });
 
@@ -26,6 +31,9 @@ module.exports = function () {
   });
 
   this.Then(/^the product shall be removed from the shopping cart$/, async function () {
+    let shopCartList = await (await driver.findElement(By.css('.cart-mini-list')).getText());
+    expect(shopCartList).not.equal(prodName);
+      //"Ägg 10p Frigående Utomhus M / l");
     
   });
 
