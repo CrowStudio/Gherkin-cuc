@@ -10,6 +10,7 @@ Feature: Remove a product
     Then I should be able to see some products
     When I click the plus sign to add a product
       And I click the plus sign on the next product
+    Then I should be able to see some products
 
   Scenario: Remove a product from shopping cart
     When I click the Gå till kassan-button
