@@ -41,7 +41,7 @@ module.exports = function() {
       } else {
         break;
       }
-      waitAWhile(true);
+      await waitAWhile(true);
     }
 
     await driver.executeScript('window.scrollTo(0,0)');

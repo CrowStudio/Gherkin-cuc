@@ -39,7 +39,7 @@ module.exports = function() {
     let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
-    await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
+    await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(randomLetter, selenium.Key.ENTER);
     await waitAWhile(true);

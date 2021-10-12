@@ -14,8 +14,8 @@ module.exports = function() {
   });
 
   this.Then(/^we should see the checkout screen$/, async function() {
-    waitAWhile(true);
-    
+    await waitAWhile(true);
+
     await driver.wait(until.elementLocated(By.css('.header-text')), 10000);
     cartText = await (await driver.findElement(By.css('.header-text'))).getText();
     expect(cartText).to.equal('Varukorg');

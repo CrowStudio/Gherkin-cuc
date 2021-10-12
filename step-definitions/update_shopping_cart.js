@@ -46,7 +46,7 @@ module.exports = function () {
     await waitAWhile(true);
   });
 
-  this.Then(/^the quantity should remain the same as before$/, async function () {
+  this.Then(/^the quantity should remain the same as before$/, async function() {
     let quantity = +(await (await driver.findElement(By.css('.md-3-line input[name="quantity"]'))).getAttribute("value"));
     await waitAWhile(true);
     expect(quantity).to.equal(quantityBeforeChange);
