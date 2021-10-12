@@ -13,7 +13,6 @@ Feature: Remove a product
     Then I should be able to see some products
     When I click the shopping cart
     Then I should see the added products in my shopping cart
-    #la till when and then från view cart
 
   Scenario: Remove a product from shopping cart
     When I click the Gå till kassan-button
