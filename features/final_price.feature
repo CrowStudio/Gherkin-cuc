@@ -1,3 +1,6 @@
+# As a customer, I want to be able to see the correct subtotal of my shopping cart, 
+# so that I can see the final price before I proceed to checkout. 
+
 Feature: Check the total price
   As a customer, I want to be able to see the correct subtotal of my shopping cart, 
   so that I can see the final price before I proceed to checkout. 

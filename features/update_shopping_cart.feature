@@ -1,5 +1,5 @@
-#As a customer, I want to be able update the amount of a product in the shopping cart,
-#so that I can change my mind after adding it to the cart.
+# As a customer, I want to be able update the amount of a product in the shopping cart,
+# so that I can change my mind after adding it to the cart.
 
 Feature: Update quantity of a product in the shopping cart
   As a customer I should be able to update the quantity of a product in the shopping cart

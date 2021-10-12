@@ -1,3 +1,6 @@
+# As a customer, I want to be able to checkout my shopping cart, 
+# so that I can buy the products I have added.
+
 Feature: Test checkout functionality
   As a customer, I want to be able to checkout my shopping cart, 
   so that I can buy the products I have added.

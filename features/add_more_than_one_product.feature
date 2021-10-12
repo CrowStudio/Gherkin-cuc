@@ -1,4 +1,4 @@
-#As a customer, I want to be able to add more than one of a selected product to the shopping cart, so that I can buy them.
+# As a customer, I want to be able to add more than one of a selected product to the shopping cart, so that I can buy them.
 
 Feature: Add more than one of the same product to the shopping cart
   As a customer I should be able to add more than one of the same product to the shopping cart

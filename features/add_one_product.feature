@@ -1,4 +1,4 @@
-#As a customer, I want to be able to add a product to the shopping cart, so that I can buy it.
+# As a customer, I want to be able to add a product to the shopping cart, so that I can buy it.
 
 Feature: Add one product to the shopping cart
   As a customer I should be able to add a product to the shopping cart

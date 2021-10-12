@@ -1,4 +1,4 @@
-#As a customer, I want to be able to remove any product from the shopping cart, so that I can change my mind.
+# As a customer, I want to be able to remove any product from the shopping cart, so that I can change my mind.
 
 Feature: Remove a product
   As a customer I should be able to remove a product from the shopping cart
