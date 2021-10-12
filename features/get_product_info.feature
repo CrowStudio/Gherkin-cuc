@@ -12,9 +12,7 @@ Feature: Get product information
       And we have been through the initial select delivery popup
     Then I should be able to see some products
 
-  #decide what product to click or click a random one?
 
   Scenario: Click product and get information
-    #Given that I am on "https://www.willys.se" - remove this? // Mike
     When I click on a product
     Then I should get the clicked products information
