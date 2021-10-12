@@ -39,8 +39,6 @@ module.exports = function() {
     let alphabet = "abcdefghijklmnopqrstuvwxyzåäö"
     let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-    // console.log('random letter ' + randomLetter);
-
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
     await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
     await quantityInput.sendKeys(selenium.Key.DELETE);
@@ -48,11 +46,9 @@ module.exports = function() {
     await waitAWhile(true);
   });
 
-  this.Then(/^the quatity should remain zero$/, async function () {
+  this.Then(/^the quantity should remain zero$/, async function () {
     let quantity = +(await (await driver.findElement(By.css('input[name="quantity"]'))).getAttribute("value"));
     expect(quantity).to.equal(0);
-
-    // console.log('quantity is ' + quantity);
   });
 
 }
