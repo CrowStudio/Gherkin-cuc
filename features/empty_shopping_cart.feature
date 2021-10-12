@@ -14,7 +14,7 @@ Feature: Empty shopping cart
     When I click the shopping cart
     Then I should see the added products in my shopping cart
 
-  Scenario:
+  Scenario: Empty the whole shopping cart
     When I click the white Töm-button in the shopping cart
       And confirm by clicking the red Töm-button
     Then I should have an empty shopping cart
