@@ -1,4 +1,5 @@
 const { waitAWhile } = require('../helpers/wait.js');
+const { getOs } = require('../helpers/os.js');
 
 module.exports = function () {
   
@@ -22,7 +23,10 @@ module.exports = function () {
     quantityBeforeChange = +(await (await driver.findElement(By.css('.md-3-line input[name="quantity"]'))).getAttribute("value"));
     let quantity = Math.floor(Math.random() * 6 + 5);
     let quantityInput = await driver.findElement(By.css('.md-3-line input[name="quantity"]'));
-    await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
+    let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
+    let osKey = await getOs(os);
+    await quantityInput.sendKeys(osKey + 'a');
+    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(quantity, selenium.Key.ENTER);
     await waitAWhile(true);
@@ -40,7 +44,10 @@ module.exports = function () {
     let alphabet = "abcdefghijklmnopqrstuvwxyzåäö"
     let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     let quantityInput = await driver.findElement(By.css('.md-3-line input[name="quantity"]'));
-    await quantityInput.sendKeys(selenium.Key.CONTROL + "a");
+    let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
+    let osKey = await getOs(os);
+    await quantityInput.sendKeys(osKey + 'a');
+    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(randomLetter, selenium.Key.ENTER);
     await waitAWhile(true);

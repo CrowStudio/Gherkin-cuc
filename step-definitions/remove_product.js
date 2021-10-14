@@ -1,6 +1,8 @@
 const { waitAWhile } = require('../helpers/wait.js');
+const { getOs } = require('../helpers/os.js');
 
 module.exports = function () {
+
   let prodName;
 
   this.When(/^I click the plus sign on the next product$/, async function(){
@@ -21,7 +23,10 @@ module.exports = function () {
   
   this.When(/^I change the quantity for a product to 0$/, async function() {
     let zeroInput = await driver.findElement(By.css('.md-3-line input[name="quantity"]'));
-    await zeroInput.sendKeys(selenium.Key.CONTROL + "a");
+    let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
+    let osKey = await getOs(os);
+    await zeroInput.sendKeys(osKey + 'a');
+    // await zeroInput.sendKeys(selenium.Key.CONTROL + 'a');
     await zeroInput.sendKeys(selenium.Key.DELETE);
     await zeroInput.sendKeys(0, selenium.Key.ENTER);
     await waitAWhile(true);
@@ -42,7 +47,6 @@ module.exports = function () {
     let comfirm = await driver.findElements(By.css('.ax-btn-primary.md-button'));
     await comfirm[1].click();
     await waitAWhile(true);
-
   });
 
   this.Then(/^the product shall be removed from the shopping cart$/, async function() {
@@ -50,5 +54,5 @@ module.exports = function () {
     console.log(shopCartList);
     expect(shopCartList).to.not.equal(prodName);
   });
-
+  
 }
