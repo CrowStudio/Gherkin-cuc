@@ -1,4 +1,5 @@
 const { waitAWhile } = require('../helpers/wait.js');
+const { getOs } = require('../helpers/os.js');
 
 module.exports = function() {
 
@@ -10,7 +11,10 @@ module.exports = function() {
 
   this.When(/^I change the quantity of a product from zero to "([^"]*)"$/, async function(quantity) {
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
-    await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
+    let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
+    let osKey = await getOs(os);
+    await quantityInput.sendKeys(osKey + 'a');
+    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(quantity);
     await waitAWhile(true);
@@ -39,7 +43,10 @@ module.exports = function() {
     let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
     let quantityInput = await driver.findElement(By.css('input[name="quantity"]'));
-    await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
+    let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
+    let osKey = await getOs(os);
+    await quantityInput.sendKeys(osKey + 'a');
+    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(randomLetter, selenium.Key.ENTER);
     await waitAWhile(true);
