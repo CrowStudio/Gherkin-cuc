@@ -1,6 +1,7 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
 module.exports = function() {
+
   this.Given(/^that I am on "([^"]*)"$/, async function(url) {
     await helpers.loadPage(url);
   });
@@ -38,4 +39,5 @@ module.exports = function() {
     let productArray = await driver.findElements(By.css(".ax-product-puff-head"));
     expect(productArray.length).to.not.equal(0);
   });
+  
 }

@@ -1,6 +1,7 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
 module.exports = function() {
+
   let sideNav;
   let category;
 
@@ -34,4 +35,5 @@ module.exports = function() {
     let siteURL = await (await driver.findElement(By.css('[rel="canonical"]'))).getAttribute("href");;
     expect(siteURL).to.equal(Url);
   });
+  
 }

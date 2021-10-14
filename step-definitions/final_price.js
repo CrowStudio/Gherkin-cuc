@@ -3,8 +3,8 @@ const { waitAWhile } = require('../helpers/wait.js');
 let productsToBuy;
 
 module.exports = function() {
+
   this.Given(/^that I am on the Ice Cream category page$/, async function(){
-    
     // We need to scroll into view for all menu items because of different screen sizes.
     await driver.wait(until.elementsLocated(By.css('a[href="/sortiment/fryst"]')), 10000);
     let frystLink = await driver.findElement(By.css('a[href="/sortiment/fryst"]'));
@@ -32,7 +32,6 @@ module.exports = function() {
   });
 
   this.When(/^I put one of each that has a set price in the shopping cart$/, async function(){
-
     // Click on "visa fler" until all products are visible.
     let loadMore = [];
     while(true) {
@@ -97,4 +96,5 @@ module.exports = function() {
     
     expect(miniCartTotalPrice).to.equal(totalPrice);
   });
+  
 }

@@ -6,7 +6,6 @@ module.exports = function() {
     let emptyButton = await driver.findElements(By.css('.ax-btn-secondary'));
     await emptyButton[1].click();
     await waitAWhile(true);
-
   });
 
   this.When(/^confirm by clicking the red Töm-button$/, async function() {
