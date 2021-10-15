@@ -1,9 +1,9 @@
 const { waitAWhile } = require('../helpers/wait.js');
 
-let productsToBuy;
-
 module.exports = function() {
 
+  let productsToBuy;
+  
   this.Given(/^that I am on the Ice Cream category page$/, async function(){
     // We need to scroll into view for all menu items because of different screen sizes.
     await driver.wait(until.elementsLocated(By.css('a[href="/sortiment/fryst"]')), 10000);
