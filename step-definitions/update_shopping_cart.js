@@ -26,7 +26,6 @@ module.exports = function () {
     let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
     let osKey = await getOs(os);
     await quantityInput.sendKeys(osKey + 'a');
-    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(quantity, selenium.Key.ENTER);
     await waitAWhile(true);
@@ -47,7 +46,6 @@ module.exports = function () {
     let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
     let osKey = await getOs(os);
     await quantityInput.sendKeys(osKey + 'a');
-    //await quantityInput.sendKeys(selenium.Key.CONTROL + 'a');
     await quantityInput.sendKeys(selenium.Key.DELETE);
     await quantityInput.sendKeys(randomLetter, selenium.Key.ENTER);
     await waitAWhile(true);

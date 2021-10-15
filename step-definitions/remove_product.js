@@ -26,7 +26,6 @@ module.exports = function () {
     let os = await driver.getCapabilities().then(function(capabs) { return capabs.get('platform'); });
     let osKey = await getOs(os);
     await zeroInput.sendKeys(osKey + 'a');
-    // await zeroInput.sendKeys(selenium.Key.CONTROL + 'a');
     await zeroInput.sendKeys(selenium.Key.DELETE);
     await zeroInput.sendKeys(0, selenium.Key.ENTER);
     await waitAWhile(true);
