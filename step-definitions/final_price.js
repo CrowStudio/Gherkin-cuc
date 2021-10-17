@@ -61,6 +61,9 @@ module.exports = function() {
       
       // Push to array
       productsToBuy.push({ name, quantity, priceOfOne });
+
+      // Add some minimal waiting since very fast computers sometimes jumble this.
+      await driver.sleep(100);
       
       // Send quantity with webdriver
       let quantityField = await product.findElement(By.css('[aria-label="Ändra produktantal"]'));
