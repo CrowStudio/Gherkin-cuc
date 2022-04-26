@@ -1,3 +1,3 @@
 # Gherkin-cuc
 
-Our very awesome school project! 
+API testing with Gherkin/Cucumber
